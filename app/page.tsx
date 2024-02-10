@@ -18,10 +18,16 @@ export default async function Home({ searchParams }: Props ) {
     where: {
       OR: [
         {
-          email: query,
+          email: {
+            contains: query,
+            mode: 'insensitive'
+          },
         },
         {
-          name: query
+          name: {
+            contains: query,
+            mode: 'insensitive'
+          }
         },
       ],
     },
@@ -41,7 +47,7 @@ export default async function Home({ searchParams }: Props ) {
       <Text>In Database</Text>
       <Search query={query}/>
       <Card className='mt-6'>
-        <UsersTable users={query ? users : allUsers}/>
+        <UsersTable users={query ? users : allUsers} />
       </Card>
     </main>
   )

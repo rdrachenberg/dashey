@@ -3,11 +3,13 @@ import { Table, TableBody, TableCell, TableHead, TableHeaderCell, TableRow } fro
 
 type Props = {
   users: User[];
+  allUsers: User[]
 }
 export default function UsersTable({ users }: Props) {
-  console.log('users here: ----->')
-  console.log(users);
-  console.log('<----------')
+  // console.log('users here: ----->')
+  // console.log(users);
+  // console.log('<----------')
+  
   return (
     <Table>
       <TableHead>

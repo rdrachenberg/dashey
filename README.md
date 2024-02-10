@@ -16,5 +16,5 @@
 - [Next Auth (user auth)](https://authjs.dev)
 
 #### 🧠 Learn More
-Vercel Deployment: https://dashey.vercel.app/
+Vercel Deployment: https://dashey.vercel.app/ <br>  
 Inspired by: https://github.com/vercel/nextjs-postgres-nextauth-tailwindcss-template

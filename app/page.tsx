@@ -26,14 +26,21 @@ export default async function Home({ searchParams }: Props ) {
     },
   });
   // console.log(query)
-
+  const allUsers = await prisma.user.findMany({
+    where: {
+      name: {
+        contains: query
+      }
+    }
+  });
+  console.log(allUsers)
   return (
     <main className='p-4 md:p-10 mx-auto max-w-7xl'>
       <Title>Users</Title>
       <Text>In Database</Text>
       <Search query={query}/>
       <Card className='mt-6'>
-        <UsersTable users={users}/>
+        <UsersTable users={query? users : allUsers}/>
       </Card>
     </main>
   )
